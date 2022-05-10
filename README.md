@@ -1,6 +1,6 @@
 # Please-Read: Paper Notifier that lazy you didn't read.
 
-<img src="assets/extinct.webp" width="200" margin-left="auto" margin-right="auto"/>
+<img src="assets/extinct.webp" width="200"/>
 
 ## Problem Formulation
 Repository owner piles up papers and leave them until they extinct. He decided to make an alarm bot for himself to notify his unread papers from his self-made paper table in Notion. Since he is poor, he didn't have any money to run his own personal Linux server and decided to use one of [Azure Functional]() or [Github Actions]().
