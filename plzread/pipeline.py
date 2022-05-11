@@ -1,4 +1,6 @@
-from plzread import fetch_papers, preprocess_raw_papers, sort_df
+from .fetch import fetch_papers
+from .preprocess import preprocess_raw_papers
+from .sort import sort_df
 
 
 class Database:
