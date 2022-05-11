@@ -76,9 +76,6 @@ def papers_to_json(df):
     return post
 
 
-KAKAO_TOKEN = "v8AvbpCNgiJf0Ws_BG0sjJJRkms3zjRXmv4CXgopb9UAAAGAsu9jHw"  # 주기적으로 업데이트해줘야함
-
-
 def _send_message(post, KAKAO_TOKEN):
     header = {"Authorization": "Bearer " + KAKAO_TOKEN}
 
