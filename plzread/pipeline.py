@@ -7,12 +7,19 @@ class Database:
         self.credential_fname = credential_fname
         self.top_pct = top_pct
 
-    def fetch_papers(self, credential_fname:str=None):
+    def _fetch_papers(self, credential_fname:str=None):
 
         if credential_fname is None:
             credential_fname = self.credential_fname
 
         self.raw_papers = fetch_papers(credential_fname)
+        return self.raw_papers
+
+    def fetch_papers(self, NOTION_KEY, DATABASE_ID):
+
+        from plzread.fetch import _fetch_papers
+
+        self.raw_papers = _fetch_papers(NOTION_KEY, DATABASE_ID)
         return self.raw_papers
 
     def to_dataframe(self, raw_papers: list = None):
@@ -34,9 +41,9 @@ class Database:
         self.sorted_df = sort_df(df)
         return self.sorted_df
 
-    def run(self):
+    def run(self, NOTION_KEY, DATABASE_ID):
 
-        raw_papers = self.fetch_papers()
+        raw_papers = self.fetch_papers(NOTION_KEY, DATABASE_ID)
         df = self.to_dataframe(raw_papers)
         sorted_df = self.sort(df)
         return sorted_df

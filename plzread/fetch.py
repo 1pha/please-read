@@ -22,7 +22,7 @@ def _get_credentials(credential_fname: str = "credentials.json") -> Tuple[str, s
     return NOTION_KEY, DATABASE_ID
 
 
-def fetch_papers(NOTION_KEY: str = None, DATABASE_ID: str = None) -> list:
+def _fetch_papers(NOTION_KEY: str = None, DATABASE_ID: str = None) -> list:
 
     if NOTION_KEY is None and DATABASE_ID is None:
         # Use default credential.json
@@ -49,8 +49,13 @@ def fetch_papers(NOTION_KEY: str = None, DATABASE_ID: str = None) -> list:
 
     return papers
 
+def fetch_papers(credential_fname: str = "credentials.json"):
+
+    NOTION_KEY, DATABASE_ID = _get_credentials(credential_fname)
+    papers = _fetch_papers(NOTION_KEY, DATABASE_ID)
+    return papers
+
 
 if __name__ == "__main__":
 
-    NOTION_KEY, DATABASE_ID = _get_credentials()
-    print(fetch_papers(NOTION_KEY, DATABASE_ID))
+    print(fetch_papers())
