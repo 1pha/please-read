@@ -62,6 +62,7 @@ def papers_to_json(df):
             "description": _parse(data[4]),
             "link": {
                 "web_url": _parse(data[-3]),
+                "mobile_web_url": _parse(data[-3]),
             },
         }
         for data in df.values
