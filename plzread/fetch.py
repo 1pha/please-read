@@ -1,7 +1,7 @@
 import json
+from typing import Tuple
 
 import requests
-from typing import Tuple
 
 NOTION_VERSION = "2022-02-22"
 
@@ -48,6 +48,7 @@ def _fetch_papers(NOTION_KEY: str = None, DATABASE_ID: str = None) -> list:
             break
 
     return papers
+
 
 def fetch_papers(credential_fname: str = "credentials.json"):
 

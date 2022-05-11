@@ -1,13 +1,15 @@
 from plzread import fetch_papers, preprocess_raw_papers, sort_df
 
-class Database:
 
-    def __init__(self, credential_fname:str="credentials.json", top_pct:float=0.1):
+class Database:
+    def __init__(
+        self, credential_fname: str = "credentials.json", top_pct: float = 0.1
+    ):
 
         self.credential_fname = credential_fname
         self.top_pct = top_pct
 
-    def _fetch_papers(self, credential_fname:str=None):
+    def _fetch_papers(self, credential_fname: str = None):
 
         if credential_fname is None:
             credential_fname = self.credential_fname
@@ -48,7 +50,8 @@ class Database:
         sorted_df = self.sort(df)
         return sorted_df
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
 
     db = Database()
     print(db.run())
