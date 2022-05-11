@@ -4,8 +4,8 @@
 name: Please Read
 
 on:
-  schedule:
-  - cron: "0 15 * * *"
+  push:
+    branches: [main]
 
 permissions:
   contents: read
