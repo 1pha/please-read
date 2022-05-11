@@ -5,7 +5,7 @@ name: Please Read
 
 on:
   schedule:
-  - cron: "25 9 * * *
+  - cron: "0 21 * * *
 
 permissions:
   contents: read
